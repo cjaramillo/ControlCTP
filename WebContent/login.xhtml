@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+<h:head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Sistema Ordenes CTP</title>
+</h:head> 
+<h:body> 
+	<h:form>
+	    <p:panel id="panel" header="Iniciar sesión" style="margin-bottom:10px;">
+	        <p:messages id="messages"/>
+	        <h:panelGrid columns="2" cellpadding="5">
+	            <p:outputLabel for="username" value="Usuario:"/>
+	            <p:inputText id="username" required="true" value="#{loginBean.username}"/>
+	 
+	            <p:outputLabel for="password" value="Contraseña:"/>
+	            <p:inputText id="password" required="true" type="password" value="#{loginBean.password}"/>
+	        </h:panelGrid>
+	        <p:commandButton value="Ingresar" update="panel" icon="fa fa-key" action="#{loginBean.authUser()}"/>
+	    </p:panel>
+	</h:form>
+</h:body> 
+</html>

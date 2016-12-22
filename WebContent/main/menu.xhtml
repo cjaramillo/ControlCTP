@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="es" 
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+<h:head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Service CTP</title>
+</h:head> 
+<h:body> 
+	<p:outputLabel value="Bienvenido #{loginBean.username}"/>
+	<h:form>
+	    <p:growl id="msgs" showDetail="true" />
+	    <h:panelGrid columns="2" cellpadding="5">
+	        <p:outputLabel value="Cliente:" for="dd" />
+	        <p:autoComplete id="dd" dropdown="true" value="#{menuBean.nombreCliente}" completeMethod="#{menuBean.completeText}" maxResults="10"/>
+	    </h:panelGrid>
+	</h:form>
+</h:body> 
+</html>
+
+
