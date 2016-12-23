@@ -13,6 +13,17 @@ public class MenuBean {
 	
 	List<Cliente> clientes = new ClienteDAO().getAll();
 	private String nombreCliente;
+	private String[] selectedColors;
+	
+	
+	public String[] getSelectedColors() {
+		return selectedColors;
+	}
+
+	public void setSelectedColors(String[] selectedColors) {
+		this.selectedColors = selectedColors;
+	}
+
 
 	public String getNombreCliente() {
 		return nombreCliente;
@@ -24,7 +35,6 @@ public class MenuBean {
 
 
 	public List<String> completeText(String query) {
-        System.out.println("Hola desde completeTxt");
 		List<String> results = new ArrayList<String>();
         for(Cliente tmpCliente : this.clientes){
         	if (tmpCliente.getNombre().toUpperCase().startsWith(query.toUpperCase())){

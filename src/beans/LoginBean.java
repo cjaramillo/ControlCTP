@@ -10,7 +10,11 @@ import dao.LoginDAO;
 public class LoginBean {
 	private String username;
 	private String password;
+	private boolean isLogged=false;
 	
+	public boolean isLogged() {
+		return isLogged;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -27,9 +31,11 @@ public class LoginBean {
 	public String authUser(){
 		LoginDAO ldao = new LoginDAO();
 		if (ldao.login(username, password)){
+			isLogged=true;
 			return "main";
 		}else{
 			this.username=this.password="";
+			isLogged=false;
 			return "login";
 		}
 	}
